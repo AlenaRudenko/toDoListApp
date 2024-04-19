@@ -5,6 +5,7 @@ import { BuildOptions } from './types/types'
 export function buildDevServer({port}:BuildOptions): DevServerConfiguration{
     return {
         port:port ?? 3000,
-        open:true
+        open:true,
+        hot: true,
       }
 }
