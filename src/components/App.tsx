@@ -1,10 +1,9 @@
-import { useState } from "react";
-import classes from "./App.module.scss";
+import "./App.module.scss";
+import { Container } from "@mui/material";
+import { Main } from "../pages/main-page/Main";
 
 export const App = () => {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount((prevState) => prevState + 1);
-  };
-  return <div></div>;
+  return <Container maxWidth={false} disableGutters sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+    <Main />
+    </Container >;
 };
