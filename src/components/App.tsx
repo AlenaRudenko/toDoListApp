@@ -1,23 +1,26 @@
 import { useState } from "react";
 import "./App.module.scss";
-import { AppBar, Container, ThemeProvider, Toolbar, Typography } from "@mui/material";
-import { lightTheme } from "./theme";
+import { Container, Content, StyledButton, StyledInput, Todo, TodoContent,StyledInputContainer } from "./styledComponents";
+
 
 export const App = () => {
   const [count, setCount] = useState(0);
   const handleClick = () => {
     setCount((prevState) => prevState + 1);
   };
-  return <ThemeProvider theme={lightTheme}>
-    <div style={{backgroundColor:'red'}}>
-          <Container style={{height:'100vh'}}><AppBar position="static" >
+  return <Container>
+    <Content>
+      <StyledInputContainer>
+              <StyledInput/>
+            <StyledButton>ADD</StyledButton>
+      </StyledInputContainer>
 
-         <Toolbar disableGutters><Typography variant="h1">КУПИ</Typography>
-        </Toolbar>
-     
-     
-      </AppBar> </Container>
-    </div>
+      <TodoContent>
+      <Todo>hi</Todo>
+      <Todo>hi</Todo>
+      <Todo>hi</Todo>
+    </TodoContent>
+    </Content>
     
-    </ThemeProvider>
+  </Container>
 };
